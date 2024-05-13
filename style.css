@@ -1,0 +1,146 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+:root{
+    --black-primary:#282A36;
+    --black-secondary:#353742;
+    --black-outline:#222222;
+}
+
+body{
+    background-color: var(--black-primary);
+    font-family: monospace !important;
+}
+
+.container-page{
+    margin: auto;
+    display: grid;
+    justify-content: center;
+    padding: 40px;
+}
+
+.btn-random-colors{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 10px;
+    margin: 10px 0px;
+}
+
+.btn{
+    padding: 10px;
+    border: 0px;
+    font-size: 18px;
+    border-radius: 0.2rem;
+    background-color: transparent;
+    box-shadow: 5px 5px 10px #0000004f;
+    cursor: pointer;
+    color: #ffff;
+}
+
+#gradients{
+    display: flex;
+    flex-direction: row;
+    margin: 10px 0px;
+    font-size: 20px;
+    background-color: var(--black-secondary);
+    border: 1px solid var(--black-outline);
+    border-radius: 10px;
+    align-items: center;
+    overflow: hidden;
+}
+
+.content{
+    display: flex;
+    align-items: center;
+    margin: 10px;
+}
+
+.copy{
+    height: auto;
+    width: auto;
+    padding: 15px 20px;
+    border: 0px;
+    background-color:  #0072F5;
+    cursor: pointer;
+    color: #ffff;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.content-color{
+    display: flex;
+}
+
+.color-value{
+    background-color: var(--black-secondary);
+    width: 40px;
+    height: auto;
+}
+
+.code-text{
+    color: #CBAC71;
+}
+
+.parentesis{
+    color: #6D737E;
+}
+
+.code-options{
+    color: #BB5E67;
+}
+
+.colors-code{
+    color: #ffff;
+}
+
+.container-square{
+    margin: 50px 0px;
+    display: flex;
+    gap: 50px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.square-gradient{
+/*    background-color: var(--black-secondary); */
+   background: linear-gradient( 90deg, #ffff , #000000 );
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    position: relative;
+}
+
+.squere-points{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0px;
+    top: 0px;
+    rotate: 90deg;
+}
+
+.squere-points::after{
+    content: '';
+    background-color: #6d6d6d;
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    top: -20px;
+    left: 50%;
+    rotate: 0deg;
+}
+
+.squere-points::before{
+    content: '';
+    background-color: #6d6d6d;
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    top: calc(100% + 10px);
+    left: 50%;
+    rotate: 0deg;
+}
