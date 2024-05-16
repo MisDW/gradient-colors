@@ -67,13 +67,10 @@ function RandomColor() {
     ChangeColors()
   })
   
-rangeDeg.addEventListener('mousedown', () => {
-    console.log('click');
-    rangeDeg.addEventListener('mousemove', () =>{
-        console.log(rangeDeg.value);
-        degGradient = rangeDeg.value
-        ChangeColors()
-    })
+rangeDeg.addEventListener('input', () => {
+    degGradient = rangeDeg.value;
+    ChangeColors();
+    console.log('event');
 })
 
 document.getElementById("btn-copy").addEventListener("click", CopyGradient);
@@ -89,4 +86,29 @@ function CopyGradient() {
     window.getSelection().removeAllRanges();
     alert("Contenido copiado al portapapeles.");
 }
+
+const btnSave = document.getElementById('btn-save')
+var colorSave = []
+
+function ColorSave (){
+    colorSave.push({'color1': color1, 'color2': color2})
+    console.log(colorSave);
+}
+
+function SearchColorSave() {
+    return colorSave.find(item => item.color1 == color1);
+}
+
+btnSave.addEventListener('click', async () =>{
+    let color = SearchColorSave()
+    console.log(color);
+    if (color != undefined) {
+        console.log('ESte ya esta papu');
+        btnSave.innerHTML = '<i class="fa-regular fa-bookmark"></i>'
+    }else{
+        btnSave.innerHTML = '<i class="fa-solid fa-bookmark"></i>'
+    }
+    
+    // await ColorSave()
+})
 
